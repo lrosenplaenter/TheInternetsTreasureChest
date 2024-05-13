@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3"
+  },
+  "scripts": {
+    "copy-public-modules": "node .github/scripts/copy-public-modules.js"
+  }
+}

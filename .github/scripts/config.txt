@@ -1,0 +1,14 @@
+target-folder: 
+    ./website/public_modules
+ressources: 
+    ./node_modules/bootstrap/dist/css/bootstrap.min.css
+    ./node_modules/bootstrap/dist/js/bootstrap.min.js
+    ./node_modules/bootstrap/LICENSE
+    ./node_modules/bootstrap/package.json
+    ./node_modules/bootstrap/README.md
+    ./node_modules/bootstrap-icons/font/bootstrap-icons.min.css
+    ./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff
+    ./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2
+    ./node_modules/bootstrap-icons/LICENSE
+    ./node_modules/bootstrap-icons/package.json
+    ./node_modules/bootstrap-icons/README.md

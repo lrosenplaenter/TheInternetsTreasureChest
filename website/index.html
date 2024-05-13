@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leons Projects</title>
+    <link href="public_modules/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="public_modules/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .card {
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><h1>Leons Projects</h1></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <button class="btn btn-primary" onclick="filterCards('alle')">Alle</button>
+                    <button class="btn btn-secondary" onclick="filterCards('kategorie1')">Kategorie 1</button>
+                    <button class="btn btn-secondary" onclick="filterCards('kategorie2')">Kategorie 2</button>
+                </div>
+            </div>
+            <div class="row" id="card-container">
+                <div class="col-md-4 mb-4 card-container" data-category="kategorie1">
+                    <div class="card">
+                        <img src="bild1.jpg" class="card-img-top" alt="Bild 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Karte 1</h5>
+                            <p class="card-text">Dies ist eine kurze Beschreibung für die erste Karte.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 card-container" data-category="kategorie2">
+                    <div class="card">
+                        <img src="bild2.jpg" class="card-img-top" alt="Bild 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Karte 2</h5>
+                            <p class="card-text">Dies ist eine kurze Beschreibung für die zweite Karte.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 card-container" data-category="kategorie1">
+                    <div class="card">
+                        <img src="bild3.jpg" class="card-img-top" alt="Bild 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Karte 3</h5>
+                            <p class="card-text">Dies ist eine kurze Beschreibung für die dritte Karte.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </main>
+
+    <script>
+        function filterCards(category) {
+            var cards = document.getElementsByClassName('card-container');
+            for (var i = 0; i < cards.length; i++) {
+                if (category === 'alle' || cards[i].getAttribute('data-category') === category) {
+                    cards[i].style.display = '';
+                    cards[i].style.transform = 'scale(1)';
+                } else {
+                    cards[i].style.display = 'none';
+                    cards[i].style.transform = 'scale(0)';
+                }
+            }
+        }
+    </script>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <a href="#" class="position-fixed bottom-0 end-0 mb-3 me-3 button-primary" style="font-size: 2rem;">
+                <i class="bi bi-arrow-up-circle-fill"></i>
+            </a>
+        </div>
+    </footer>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="text-center">Copyright (c) 2024. Assembled using <a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a> and <a href="https://github.com/twbs/icons" target="_blank">Bootstrap Icons</a></p>
+        </div>
+    </footer>
+
+    <script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
