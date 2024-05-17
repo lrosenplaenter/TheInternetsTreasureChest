@@ -2,7 +2,7 @@ target-folder:
     ./website/public_modules
 ressources: 
     ./node_modules/bootstrap/dist/css/bootstrap.min.css
-    ./node_modules/bootstrap/dist/js/bootstrap.min.js
+    ./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js
     ./node_modules/bootstrap/LICENSE
     ./node_modules/bootstrap/package.json
     ./node_modules/bootstrap/README.md
