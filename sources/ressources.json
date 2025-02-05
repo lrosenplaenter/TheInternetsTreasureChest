@@ -1,0 +1,32 @@
+{
+    "ressources": [
+        {"name": "Website"},
+        {"name": "additional Website"},
+        {"name": "Blogger"},
+        {"name": "Wordpress"},
+        {"name": "Medium"},
+        {"name": "Substack"},
+        {"name": "GitHub-Repository"},
+        {"name": "Sourceforge"},
+        {"name": "StackOverflow"},
+        {"name": "DOI"},
+        {"name": "RSS Feed"},
+        {"name": "Internet Archive"},
+        {"name": "Spotify"},
+        {"name": "Soundcloud"},
+        {"name": "Audio File"},
+        {"name": "MP3"},
+        {"name": "Text File"},
+        {"name": "PDF"},
+        {"name": "DOCX"},
+        {"name": "TXT"},
+        {"name": "Slideshow"},
+        {"name": "PPTX"},
+        {"name": "Video File"},
+        {"name": "MP4"},
+        {"name": "WEBM"},
+        {"name": "Youtube"},
+        {"name": "Vimeo"},
+        {"name": "Reddit"}       
+    ]
+}

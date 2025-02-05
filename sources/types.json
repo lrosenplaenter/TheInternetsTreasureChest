@@ -1,0 +1,48 @@
+{
+    "types": [
+        {"maintype": "Website", "subtypes": [
+            {"subtype":"Blog-Post"},
+            {"subtype":"Social-Post"},
+            {"subtype":"Game"},
+            {"subtype":"Tool"},
+            {"subtype":"Tutorial"},
+            {"subtype":"Demonstration"},
+            {"subtype":"Science Communication"},
+            {"subtype":"Entertainment"}
+        ]},
+        {"maintype": "Newsletter", "subtypes": [
+            {"subtype":"E-Mail Newsletter"},
+            {"subtype":"Newsletter Website"}
+        ]},
+        {"maintype": "Video", "subtypes": [
+            {"subtype":"Tutorial"},
+            {"subtype":"Demonstration"},
+            {"subtype":"Science Communication"},
+            {"subtype":"Entertainment"}
+        ]},
+        {"maintype": "Video-Playlist", "subtypes": [
+            {"subtype":"Tutorial"},
+            {"subtype":"Demonstration"},
+            {"subtype":"Science Communication"},
+            {"subtype":"Entertainment"}
+        ]},
+        {"maintype": "Video-Creator", "subtypes": [
+            {"subtype":"Tutorial"},
+            {"subtype":"Demonstration"},
+            {"subtype":"Science Communication"},
+            {"subtype":"Entertainment"}
+        ]},
+        {"maintype": "Podcast", "subtypes": [
+            {"subtype":"Audio Postcast"},
+            {"subtype":"Video Postcast"},
+            {"subtype":"Podcast-Episode"}
+        ]},
+        {"maintype": "Software", "subtypes": [
+            {"subtype":"Game"},
+            {"subtype":"Tool"}
+        ]},
+        {"maintype": "Miscellaneous", "subtypes": [
+            {"subtype":"Document"}
+        ]}
+    ]
+}
