@@ -25,13 +25,16 @@ async function main() {
     if (userChoice === "Stage new treasure") {
         await stage_new_treasure();
     } else if (userChoice === "Integrate new treasures") {
-        // TODO
+        integrate_new_treasures();
     } else if (userChoice === "Database maintenance") {
+        console.group("Not yet implemented! :(")
         // TODO
     }
     rl.close();
+    console.log("\n")
 }
 
+/* Stage new */
 async function stage_new_treasure() {
     let newEntry = {
         new_entry: {
@@ -41,8 +44,9 @@ async function stage_new_treasure() {
             data: {
                 types: await getTypeSelection(),
                 topics: await getTopicSelection(),
-                tags: await getTagSelection()
+                flags: await getFlagSelection()
             },
+            tags: await getTagsSelection(),
             ressources: await getResourceSelection()
         }
     };
@@ -78,7 +82,12 @@ async function getTopicSelection() {
     return topics;
 }
 
-async function getTagSelection() {
+async function getFlagSelection() {
+    const flagsData = JSON.parse(fs.readFileSync(path.join(DATA_PATH, "flags.json")));
+    return await multiPromptUser("Select flags:", flagsData.flags);
+}
+
+async function getTagsSelection() {
     const tagsData = JSON.parse(fs.readFileSync(path.join(DATA_PATH, "tags.json")));
     return await multiPromptUser("Select tags:", tagsData.tags);
 }
@@ -108,6 +117,11 @@ async function saveNewEntry(entry) {
     } catch (err) {
         console.error("Error saving the new entry:", err);
     }
+}
+
+/* integrate new */
+function integrate_new_treasures () {
+    console.log("TEST")
 }
 
 /*** Helper Functions ***/

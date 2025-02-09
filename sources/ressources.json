@@ -27,6 +27,7 @@
         {"name": "WEBM"},
         {"name": "Youtube"},
         {"name": "Vimeo"},
-        {"name": "Reddit"}       
+        {"name": "Reddit"},
+        {"name": "Treasure"}       
     ]
 }
