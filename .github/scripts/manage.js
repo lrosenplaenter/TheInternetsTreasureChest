@@ -11,6 +11,7 @@ const rl = readline.createInterface({
 
 const DATA_PATH = path.join(__dirname, "../../sources");
 const STAGE_PATH = path.join(__dirname, "../../sources/to_integrate");
+const DATABASE = "data.json"
 
 /*** Functions ***/
 async function main() {
@@ -27,7 +28,7 @@ async function main() {
     } else if (userChoice === "Integrate new treasures") {
         integrate_new_treasures();
     } else if (userChoice === "Database maintenance") {
-        console.group("Not yet implemented! :(")
+        console.log("Not yet implemented! :(")
         // TODO
     }
     rl.close();
@@ -121,8 +122,185 @@ async function saveNewEntry(entry) {
 
 /* integrate new */
 function integrate_new_treasures () {
-    console.log("TEST")
+    let data = []; // to hold the content that will be stores as data.json
+
+    // getting new treasures + add "new" flag + add timestamp
+    var TreasuresToIntegrate = getTreasuresToIntegrate(); //
+    console.log(`Found ${TreasuresToIntegrate.length} new Treasures to integrate!`)
+    TreasuresToIntegrate.forEach(entry => {
+        const { title, description, data, tags, ressources } = entry.new_entry;
+        data.flags.push("new");
+        entry.new_entry = {
+          title,
+          description,
+          date: new Date().toISOString(), // Inserted after description
+          data,
+          tags,
+          ressources
+        };
+      });
+
+    // gettings existing treasures + remove "new" tag
+    var existingTresures = getExistingTreasures(); 
+    console.log(`Retrieved ${existingTresures.length} already existing Treasures to integrate!`)
+    existingTresures = existingTresures.map(entry => {
+        if (entry.existing_entry?.data?.flags) {
+            entry.existing_entry.data.flags = entry.existing_entry.data.flags.filter(flag => flag !== "new");
+        }
+        return entry;
+    });
+
+
+    /** del later! **/
+    //console.log(TreasuresToIntegrate, "\n");
+    //console.log(existingTresures, "\n");
+    //console.log(TreasuresToIntegrate[1].new_entry.data, "\n")
+    //saveToJsonFile("eins.json", TreasuresToIntegrate);
+    //saveToJsonFile("zwei.json", existingTresures);
+
+    // concat ans sort all treasures together (ToDo for later: check duplicates)
+    data = TreasuresToIntegrate.concat(existingTresures)
+    data = data.sort((a, b) => {
+        const titleA = Object.values(a)[0].title.toLowerCase();
+        const titleB = Object.values(b)[0].title.toLowerCase();
+        return titleA.localeCompare(titleB);
+    })
+    //saveToJsonFile("drei.json", data);
+    // overwrite existing data.json
+    saveNewDataJson(data);
+
+    // clear to_integrate dir from .json files
+    deleteStagedJsonFiles(STAGE_PATH, TreasuresToIntegrate);
+
+    generateHtml(data);
+}  
+
+// get data from title.json files in ./sources/to_integrate
+function getTreasuresToIntegrate () {
+    let result = [];
+
+    if (!fs.existsSync(STAGE_PATH)) {
+        console.error(`Directory not found: ${STAGE_PATH}`);
+        return result;
+    }
+
+    const files = fs.readdirSync(STAGE_PATH);
+
+    files.forEach(file => {
+        const filePath = path.join(STAGE_PATH, file);
+        
+        if (path.extname(file) === '.json') {
+            try {
+                const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                
+                if (data.new_entry && data.new_entry.to_integrate === true) {
+                    delete data.new_entry.to_integrate;
+                    result.push(data);
+                }
+            } catch (error) {
+                console.error(`Error parsing JSON file ${file}:`, error.message);
+            }
+        }
+    });
+
+    return result;
 }
+
+// get data from data.json files in ./sources
+function getExistingTreasures () {
+    const dataPath = path.join(DATA_PATH, "data.json")
+    try {
+        const rawData = fs.readFileSync(dataPath, 'utf-8');
+        const jsonData = JSON.parse(rawData);
+
+        return Object.entries(jsonData).map(([title, content]) => ({
+            existing_entry: {
+                title,
+                description: content.description,
+                date: content.date,
+                data: {
+                    types: {
+                        type: content.data.types.type,
+                        subtype: content.data.types.subtype
+                    },
+                    topics: content.data.topics.map(topic => ({
+                        topic: topic.topic,
+                        subtopics: topic.subtopics
+                    })),
+                    flags: content.data.flags
+                },
+                tags: content.tags,
+                ressources: content.ressources.map(resource => ({
+                    name: resource.name,
+                    payload: resource.payload
+                }))
+            }
+        }));
+    } catch (error) {
+        console.error('Error reading or parsing data.json:', error);
+        return [];
+    }
+}
+
+// Overwrite existing data.json with new data
+function saveNewDataJson (array) {
+    let formattedData = {};
+
+    array.forEach(entry => {
+        const key = Object.keys(entry)[0];
+        const data = entry[key];
+        
+        if (!data || !data.title) return; // Skip invalid entries
+
+        // Ensure "new" flag is present for new entries
+        if (key === "new_entry" && data.data && data.data.flags) {
+            if (!data.data.flags.includes("new")) {
+                data.data.flags.push("new");
+            }
+        }
+
+        formattedData[data.title] = {
+            description: data.description,
+            date: data.date,
+            data: {
+                types: data.data.types,
+                topics: data.data.topics,
+                flags: [...new Set(data.data.flags)], // Remove duplicates
+            },
+            tags: data.tags,
+            ressources: data.ressources
+        };
+    });
+
+    // Ensure the directory exists
+    if (!fs.existsSync(DATA_PATH)) {
+        fs.mkdirSync(DATA_PATH, { recursive: true });
+    }
+
+    const filePath = path.join(DATA_PATH, DATABASE);
+    fs.writeFileSync(filePath, JSON.stringify(formattedData, null, 4), "utf8");
+    console.log(`Database successfully updated: ${filePath}`);
+}
+
+// Delete files from STAGE_PATH if they after they were integrated
+function deleteStagedJsonFiles(directory, entries) {
+    entries.forEach(entry => {
+      const filename = `${entry.new_entry.title}.json`;
+      const filePath = path.join(directory, filename);
+      
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          if (err.code === 'ENOENT') {
+            console.log(`File not found: ${filename}`);
+          } else {
+            console.error(`Error deleting file ${filename}:`, err);
+          }
+        } else {
+          console.log(`Deleted Staged Treasure (.json) after successfull integration: ${filename}`);
+        }
+      });
+    });
+  }
 
 /*** Helper Functions ***/
 function promptUser(question, choices = null) {
@@ -192,6 +370,21 @@ function multiPromptUser(question, choices) {
                 resolve(selected);
             }
         });
+    });
+}
+
+function saveToJsonFile(filename, data) {
+    if (!Array.isArray(data)) {
+        throw new Error('Data must be an array');
+    }
+    
+    fs.writeFile(filename, JSON.stringify(data, null, 2), 'utf8', (err) => {
+        if (err) {
+            console.error('Error writing file:', err);
+        } else {
+            console.log('File successfully written:', filename);
+            return;
+        }
     });
 }
 
