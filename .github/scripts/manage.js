@@ -3,6 +3,7 @@
 const readline = require("readline");
 const fs = require("fs");
 const path = require("path");
+const { createCanvas } = require('canvas');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -300,7 +301,144 @@ function deleteStagedJsonFiles(directory, entries) {
         }
       });
     });
-  }
+}
+
+function generateHtml (data) {
+    console.log(data)
+    var entries_html = [];
+
+    for (var i in data) {
+        var key = Object.keys(data[i])[0] // get existing entries
+        if (key == "existing_entry") {
+            entries_html.push(generateEntryHtml(data[i].existing_entry, false))   
+        } else if (key == "new_entry") {    
+            entries_html.push(generateEntryHtml(data[i].new_entry, true)) 
+        }
+    }
+
+    //console.log(entries_html)
+}
+
+//generates a card elem
+function generateEntryHtml (data, isNewEntry) {
+    //console.log(data, isNewEntry)
+
+    //protoypes
+    var new_badge = `<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style="font-size: 100%;">new</span>`
+        if (isNewEntry == false) {
+            new_badge = "";
+        }
+    const subtype = data.data.types.subtype 
+        ? `/ <span class="badge rounded-pill text-bg-secondary">${data.data.types.subtype}</span>` 
+        : "";
+
+    var flags = '<p class="card-text"> <!--FLAGS--> ';
+        if (data.data.flags.length == 0) {
+            flags = "";
+        } else {
+            for (var i in data.data.flags) {
+                flags += `<span class="badge text-bg-secondary">${data.data.flags[i]}</span> `
+            }
+            flags += '</p>'
+        }
+
+    var tags = '<p class="card-text"> <!--TAGS--> Tags: ';
+        if (data.tags.length == 0) {
+            tags = "";
+        } else {
+            for (var i in data.tags) {
+                tags += `<span class="badge text-bg-secondary">${data.tags[i]}</span> ` // ggf add: style="background-color: ${determine_color(data.tags[i])} !important"
+            }
+            tags += '</p>' 
+        }
+
+    var more_ressources = '<div class="btn-group mt-1" style="display: inline-flex; overflow-x: auto; max-width: 100%; white-space: nowrap;">'
+        if (data.ressources.length < 2) {
+            more_ressources = "";
+        } else {
+            for (let i = 1; i < data.ressources.length; i++) {
+                more_ressources += `<a class="btn btn-primary" style="background-color: ${getRessourcesAttribute(data.ressources[i].name, "color")} !important; border-color: ${getRessourcesAttribute(data.ressources[i].name, "color")} !important;"  onmouseover="this.style.filter='brightness(80%)';" onmouseout="this.style.filter='brightness(100%)';" href="${data.ressources[i].payload}" target="_blank"><i class="${getRessourcesAttribute(data.ressources[i].name, "symbol")}"></i> ${getRessourcesAttribute(data.ressources[i].name, "publicname")}</a> `;
+            }
+            more_ressources += '</div>' 
+        }
+
+    var date = new Date(data.date);
+        date = date.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    
+    const headerImage = createCardHeaderImage (data.title);
+    
+    var html = 
+        `<div class="col-lg-4 col-md-6 col-sm-12 mb-3 mt-3" id="${data.title}">
+            <div class="card">
+                ${new_badge}
+                <img class="card-img-top" src="${headerImage}"></img>
+                <div class="card-body">
+                    <p class="card-text"> <!--TYPE-->
+                        <span class="badge rounded-pill text-bg-secondary">
+                            ${data.data.types.type}
+                        </span>
+                        ${subtype}
+                    </p>
+                    <h6 class="card-title">${data.title}</h6>
+                    <p class="card-text">${data.description}</p>
+                    ${flags}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        ${tags}
+                    </li>
+                </ul>
+                <div class="card-body"> <!--MAIN LINK-->
+                    <a class="btn btn-primary" style="background-color: ${getRessourcesAttribute(data.ressources[0].name, "color")} !important;  border-color: ${getRessourcesAttribute(data.ressources[0].name, "color")} !important;" onmouseover="this.style.filter='brightness(80%)';" onmouseout="this.style.filter='brightness(100%)';" href="${data.ressources[0].payload}" target="_blank"><i class="${getRessourcesAttribute(data.ressources[0].name, "symbol")}"></i> ${getRessourcesAttribute(data.ressources[0].name, "publicname")}</a>
+                    </br>
+                    ${more_ressources}
+                    <p class="card-text text-secondary pt-2" style="font-size: 85%;">
+                        added: ${date}
+                    </p>
+                </div>
+            </div>
+        </div>`
+
+    //console.log(html)
+    return html;
+}
+
+function createCardHeaderImage (seed) {
+        // Create a canvas with the same dimensions
+        const canvas = createCanvas(1600, 900);
+        const ctx = canvas.getContext('2d');
+    
+        // Set the background color using determine_color function
+        ctx.fillStyle = determine_color(seed);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+        // Set text properties
+        ctx.font = 'bold 100px Courier';
+        ctx.fillStyle = invertColor(determine_color(seed));
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        // Add the text to the canvas
+        ctx.fillText(seed, canvas.width / 2, canvas.height / 2);
+    
+        // Convert canvas to a base64 image and return it
+        return canvas.toDataURL(); // Returns base64 image of the canvas
+}
+
+function getRessourcesAttribute(name, attribute) {
+    const dataPath = path.join(DATA_PATH, "ressources.json")
+    const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+
+    // Find the resource with the matching name
+    const resource = data.ressources.find(r => r.name === name);
+
+    // Check if resource exists and if the attribute is valid
+    if (resource && resource.hasOwnProperty(attribute)) {
+        return resource[attribute];
+    } else {
+        return `Resource with name "${name}" or attribute "${attribute}" not found.`;
+    }
+}
 
 /*** Helper Functions ***/
 function promptUser(question, choices = null) {
@@ -386,6 +524,31 @@ function saveToJsonFile(filename, data) {
             return;
         }
     });
+}
+
+function determine_color (str) {
+    // Thx to Joe Freeman! https://stackoverflow.com/a/16348977
+    let hash = 0;
+    str.split('').forEach(char => {
+        hash = char.charCodeAt(0) + ((hash << 5) - hash)
+    })
+    let colour = '#'
+    for (let i = 0; i < 3; i++) {
+        const value = (hash >> (i * 8)) & 0xff
+        colour += value.toString(16).padStart(2, '0')
+    }
+    return colour
+}
+
+function invertColor(hex) {
+    hex = hex.replace(/^#/, '');
+    if (hex.length === 3) {
+        hex = hex.split('').map(char => char + char).join('');
+    }
+    let num = parseInt(hex, 16);
+    let invertedNum = 0xFFFFFF ^ num;
+    let invertedHex = invertedNum.toString(16).padStart(6, '0');
+    return `#${invertedHex}`;
 }
 
 main();
