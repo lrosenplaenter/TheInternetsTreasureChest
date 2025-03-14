@@ -2,7 +2,9 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "canvas": "^3.1.0"
+    "canvas": "^3.1.0",
+    "html-prettify": "^1.0.7",
+    "html-validate": "^9.5.0"
   },
   "scripts": {
     "copy-public-modules": "node .github/scripts/copy-public-modules.js",

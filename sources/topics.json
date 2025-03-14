@@ -1,5 +1,5 @@
 {
     "topics": [
-        {"maintopic": "name", "subtopics": ["subtopic1", "subtopic2"]}
+        {"maintopic": "TOPIC", "subtopics": ["subtopic1", "subtopic2"]}
     ]
 }
