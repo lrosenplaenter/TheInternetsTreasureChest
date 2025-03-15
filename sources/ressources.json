@@ -1,0 +1,33 @@
+{
+    "ressources": [
+        {"name": "Website", "publicname": "Website", "symbol": "bi bi-globe2", "color": "#0d6efd"},
+        {"name": "additional Website", "publicname": "Website", "symbol": "bi bi-globe", "color": "#0d6efd"},
+        {"name": "generic Blog", "publicname": "Blog", "symbol": "bi bi-globe2", "color": "#0d6efd"},
+        {"name": "Blogger", "publicname": "Blog", "symbol": "bi bi-globe2", "color": "#f57c00"},
+        {"name": "Wordpress", "publicname": "Blog", "symbol": "bi bi-wordpress", "color": "#21759b"},
+        {"name": "Medium", "publicname": "Blog", "symbol": "bi bi-medium", "color": "#000000"},
+        {"name": "Substack", "publicname": "Blog", "symbol": "bi bi-substack", "color": "#ff6719"},
+        {"name": "Wikipedia", "publicname": "Encyclopedia", "symbol": "bi bi-wikipedia", "color": "#000000"},
+        {"name": "GitHub-Repository", "publicname": "Repository", "symbol": "bi bi-github", "color": "#1b1f23"},
+        {"name": "DOI", "publicname": "DOI", "symbol": "bi bi-fingerprint", "color": "#fcb520"},
+        {"name": "RSS Feed", "publicname": "RSS Feed", "symbol": "bi bi-rss", "color": "#f7a000"},
+        {"name": "Internet Archive", "publicname": "Internet Archive", "symbol": "bi bi-archive", "color": "#000000"},
+        {"name": "Spotify", "publicname": "Spotify", "symbol": "bi bi-spotify", "color": "#1fd660"},
+        {"name": "Soundcloud", "publicname": "Soundcloud", "symbol": "bi bi-soundwave", "color": "#f8320e"},
+        {"name": "Audio File", "publicname": "Audio File", "symbol": "bi bi-file-earmark-music", "color": "#6c757d"},
+        {"name": "MP3", "publicname": "MP3", "symbol": "bi bi-filetype-mp3", "color": "#6c757d"},
+        {"name": "Text File", "publicname": "Text File", "symbol": "bi bi-file-earmark-text", "color": "#6c757d"},
+        {"name": "PDF", "publicname": "PDF", "symbol": "bi bi-filetype-pdf", "color": "#6c757d"},
+        {"name": "DOCX", "publicname": "DOCX", "symbol": "bi bi-filetype-docx", "color": "#6c757d"},
+        {"name": "TXT", "publicname": "TXT", "symbol": "bi bi-filetype-txt", "color": "#6c757d"},
+        {"name": "Slideshow", "publicname": "Slideshow", "symbol": "bi bi-file-earmark-easel", "color": "#6c757d"},
+        {"name": "PPTX", "publicname": "PPTX", "symbol": "bi bi-filetype-pptx", "color": "#c43e1c"},
+        {"name": "Video File", "publicname": "Video", "symbol": "bi bi-file-earmark-play", "color": "#6c757d"},
+        {"name": "MP4", "publicname": "Video File", "symbol": "bi bi-filetype-mp4", "color": "#6c757d"},
+        {"name": "WEBM", "publicname": "Video File", "symbol": "bi bi-file-earmark-play", "color": "#6c757d"},
+        {"name": "Youtube", "publicname": "Youtube", "symbol": "bi bi-youtube", "color": "#ff0033"},
+        {"name": "Vimeo", "publicname": "Vimeo", "symbol": "bi bi-vimeo", "color": "#17d5ff"},
+        {"name": "Reddit", "publicname": "Reddit", "symbol": "bi bi-reddit", "color": "#FF5700"},
+        {"name": "Treasure", "publicname": "Treasure", "symbol": "bi bi-coin", "color": "#FF5733"}       
+    ]
+}
