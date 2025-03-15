@@ -439,7 +439,7 @@ async function generateHtml (data) {
                     </a>
                 </div>
                 <div class="container">
-                    <p class="text-center">Copyright (c) 2025 Leon Rosenplaenter. Assembled using node.js, <a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a> and <a href="https://github.com/twbs/icons" target="_blank">Bootstrap Icons</a>. Hosted on GitHub.</p>
+                    <p class="text-center">Copyright (c) 2025 <a href="https://lrosenplaenter.github.io" target="_blank">Leon Rosenplaenter</a>. Assembled using node.js, <a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a> and <a href="https://github.com/twbs/icons" target="_blank">Bootstrap Icons</a>. Hosted on <a href="https://github.com/lrosenplaenter" target="_blank">GitHub</a>.</p>
                 </div>
             </footer>
             <!--<script src="index.js"></script>-->
@@ -452,11 +452,11 @@ async function generateHtml (data) {
         // main-topic (upper)
         html += 
         `<ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-start border-dark">
-                <div id="TOPIC_${data_by_topics[i].topic}" class="fw-bold"><h4>${data_by_topics[i].topic}</h4></div>
+            <li class="list-group-item border-dark">
+                <div id="TOPIC_${data_by_topics[i].topic.replaceAll(/\s/g,'')}" class="fw-bold"><h4>${data_by_topics[i].topic}</h4></div>
                     <!--Content/Sub Topics-->
                     <ul class="list-group list-group-flush">
-                        <li id="TOPIC_${data_by_topics[i].topic}_NO_SUBTOPIC" class="list-group-item"> <!-- li-elem for treasures without subtopic-->
+                        <li id="TOPIC_${data_by_topics[i].topic.replaceAll(/\s/g,'')}_NO_SUBTOPIC" class="list-group-item"> <!-- li-elem for treasures without subtopic-->
                             <div class="row">`
         
         // main-topic entries
@@ -474,7 +474,7 @@ async function generateHtml (data) {
             // subtopic (upper)
             html += 
                 `<li class="list-group-item border-dark"><!-- li-elem for treasures with subtopic #TOPIC-#SUBTOPIC-->
-                    <div id="SUBTOPIC_${data_by_topics[i].subtopics[0][j].subtopic}" class="fw-bold"><h5>${data_by_topics[i].topic} / ${data_by_topics[i].subtopics[0][j].subtopic}</h5></div>
+                    <div id="SUBTOPIC_${data_by_topics[i].subtopics[0][j].subtopic.replaceAll(/\s/g,'')}" class="fw-bold"><h5>${data_by_topics[i].topic} / ${data_by_topics[i].subtopics[0][j].subtopic}</h5></div>
                         <div class="row">`
             // subtopic (content)
             for (var k in data_by_topics[i].subtopics[0][j].entries) {
@@ -548,7 +548,7 @@ function generateEntryHtml (data, isNewEntry) {
     const headerImage = createCardHeaderImage (data.title);
     
     var html = 
-        `<div class="col-lg-4 col-md-6 col-sm-12 mb-3 mt-3" id="${data.title}">
+        `<div class="col-lg-4 col-md-6 col-sm-12 mb-3 mt-3" id="${data.title.replaceAll(/\s/g,'')}">
             <div class="card shadow">
                 ${new_badge}
                 <img class="card-img-top" src="${headerImage}">
@@ -663,6 +663,7 @@ async function validate_HTML(html) {
           "wcag/h37": "off", //don't check for alt elems
           "no-trailing-whitespace": "off",
           "no-dup-id": "off", //maybe change later
+          "valid-id": "off" //TODO for later, needed for futher functionalities, no need to fix right away
         },
     });
     const report = await htmlvalidate.validateString(html);

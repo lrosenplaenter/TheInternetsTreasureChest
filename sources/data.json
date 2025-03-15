@@ -1,0 +1,828 @@
+{
+    "3Blue1Brown": {
+        "description": "Not just another channel about maths, but THE channel for beautiful maths animations. Always worth a watch.",
+        "date": "2025-03-14T23:34:30.044Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                },
+                {
+                    "topic": "Learning resources",
+                    "subtopics": [
+                        "Programming",
+                        "Mathematics and Statistics"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Simulation(s)",
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@3blue1brown"
+            }
+        ]
+    },
+    "ADS-B Exchange": {
+        "description": "If you are one of those who always arrive at the gate before the aircraft: Here you can at least find out where the aircraft is at the moment...",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Tool"
+            },
+            "topics": [
+                {
+                    "topic": "Useful Tools",
+                    "subtopics": [
+                        "Data"
+                    ]
+                }
+            ],
+            "flags": [
+                "English"
+            ]
+        },
+        "tags": [],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://globe.adsbexchange.com/"
+            }
+        ]
+    },
+    "Computerphile": {
+        "description": "Videos about computers and computer stuff. For the nerds.",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics",
+                        "AI and Machine Learning",
+                        "Programming"
+                    ]
+                },
+                {
+                    "topic": "Learning resources",
+                    "subtopics": [
+                        "Programming",
+                        "Mathematics and Statistics"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "Videos https://www.youtube.com/@Computerphile"
+            }
+        ]
+    },
+    "DiaMetrics": {
+        "description": "DiaMetrics is a web-based educational resource for exploring important concepts regarding binary classification (and its evaluation), which is important in many different fields such as psychodiagnostics (e.g. in determining cut-off values for tests), machine learning or medical testing.",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Demonstration"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                },
+                {
+                    "topic": "Learning resources",
+                    "subtopics": [
+                        "Programming"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "German",
+                "Shameless-Self-Plug"
+            ]
+        },
+        "tags": [
+            "Simulation(s)",
+            "Learning-By-Doing"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://lrosenplaenter.github.io/DiaMetrics/"
+            },
+            {
+                "name": "GitHub-Repository",
+                "payload": "https://github.com/lrosenplaenter/DiaMetrics"
+            },
+            {
+                "name": "additional Website",
+                "payload": "https://lrosenplaenter.github.io/DiaMetrics_DE/"
+            },
+            {
+                "name": "additional Website",
+                "payload": "https://lrosenplaenter.github.io/DiaMetrics_lite/"
+            }
+        ]
+    },
+    "Harvard's CS50": {
+        "description": "CS50 is Harvard University’s introduction to computer science and the art of programming,\"for concentrators and non-concentrators alike, with or without prior programming experience\".",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": ""
+            },
+            "topics": [
+                {
+                    "topic": "Learning resources",
+                    "subtopics": [
+                        "Programming"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Learning-By-Doing"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://cs50.harvard.edu/x/"
+            },
+            {
+                "name": "additional Website",
+                "payload": "https://www.edx.org/cs50"
+            },
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@cs50"
+            },
+            {
+                "name": "Reddit",
+                "payload": "https://www.reddit.com/r/cs50/"
+            }
+        ]
+    },
+    "HaveIBeenPwned": {
+        "description": "Check if your email address is in a data breach.",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Tool"
+            },
+            "topics": [
+                {
+                    "topic": "Useful Tools",
+                    "subtopics": [
+                        "Cybersecurity"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://haveibeenpwned.com/"
+            }
+        ]
+    },
+    "HaveIBeenTrained": {
+        "description": "Was your data used to train AI? Find out by searching in popular AU training datasets.",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Tool"
+            },
+            "topics": [
+                {
+                    "topic": "Useful Tools",
+                    "subtopics": [
+                        "Data",
+                        "Cybersecurity"
+                    ]
+                },
+                {
+                    "topic": "Useful Tools",
+                    "subtopics": []
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Current affairs"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://haveibeentrained.com/"
+            }
+        ]
+    },
+    "How Does DALL-E 2 Work": {
+        "description": "A very well written article on how diffusion based generative AI models create images. Worth a read!",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Blog-Post"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "AI and Machine Learning"
+                    ]
+                }
+            ],
+            "flags": [
+                "English"
+            ]
+        },
+        "tags": [
+            "Current affairs"
+        ],
+        "ressources": [
+            {
+                "name": "Medium",
+                "payload": "https://medium.com/augmented-startups/how-does-dall-e-2-work-e6d492a2667f"
+            }
+        ]
+    },
+    "Internet Archive": {
+        "description": "Internet Archive is a non-profit library of millions of free texts, movies, software, music, websites, and more.",
+        "date": "2025-03-14T23:34:30.047Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Tool"
+            },
+            "topics": [
+                {
+                    "topic": "Useful Tools",
+                    "subtopics": [
+                        "Data",
+                        "Work and productivity"
+                    ]
+                }
+            ],
+            "flags": [
+                "English"
+            ]
+        },
+        "tags": [
+            "Non-Profit"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://archive.org/"
+            }
+        ]
+    },
+    "Introduction to Human Behavioral Biology": {
+        "description": "Recordings of the lecture ‘Human Behavioural Biology’ by Standford's Professor Robert Sapolsky. In my opinion the ideal of a great lecture.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Playlist",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Psychology",
+                        "Neuroscience"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Partially outdated",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Old But Gold"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/playlist?list=PL848F2368C90DDC3D"
+            }
+        ]
+    },
+    "Introduction to Neuroscience": {
+        "description": "A lecture series about the basics of neuroscience by Bing Wen Brunton.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Playlist",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Neuroscience"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/playlist?list=PLqgZEQsU_8E0l1P9bKR6yKOKPMpoJ_tLR"
+            }
+        ]
+    },
+    "Library Of Babel": {
+        "description": "A beautiful illustration of randomness: Everything that has ever been written, is being written, or will be written can be found here. Why don't you try to find your own name... Or your favourite song lyrics... Or any other combination of letters...",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Demonstration"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                }
+            ],
+            "flags": [
+                "English"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://libraryofbabel.info/"
+            },
+            {
+                "name": "additional Website",
+                "payload": "https://libraryofbabel.info/About.html"
+            },
+            {
+                "name": "additional Website",
+                "payload": "https://libraryofbabel.info/theory.html"
+            },
+            {
+                "name": "Reddit",
+                "payload": "https://www.reddit.com/r/BabelForum/"
+            }
+        ]
+    },
+    "Logbuch Netzpolitik": {
+        "description": "Ein regelmäßiger Podcast aus dem Dunstkreis des Chaos Computer Club (CCC) im Gesprächsformat mit Tim Pritlove und Linus Neumann (und Gästen). Themen sind u.a. Datenschutz, Überwachung, digitale Rechte uvm. im Kontext des aktuellen Weltgeschehens.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Podcast",
+                "subtype": "Audio Postcast"
+            },
+            "topics": [
+                {
+                    "topic": "Society and Politics",
+                    "subtopics": []
+                }
+            ],
+            "flags": [
+                "German"
+            ]
+        },
+        "tags": [
+            "Current affairs"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://logbuch-netzpolitik.de/"
+            },
+            {
+                "name": "RSS Feed",
+                "payload": "https://logbuch-netzpolitik.de/feed"
+            },
+            {
+                "name": "MP3",
+                "payload": "https://logbuch-netzpolitik.de/feed/mp3"
+            },
+            {
+                "name": "Audio File",
+                "payload": "https://logbuch-netzpolitik.de/feed/opus"
+            }
+        ]
+    },
+    "Michael Bach's Optical Illusions Page": {
+        "description": "Optical illusions are really cool. And you'll find lots of them on this classic website. 152 to be exact.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Demonstration"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Perception",
+                        "Psychology"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "German"
+            ]
+        },
+        "tags": [
+            "Old But Gold"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://michaelbach.de/ot/index.html"
+            },
+            {
+                "name": "Internet Archive",
+                "payload": "https://web.archive.org/web/20250000000000*/https://michaelbach.de/ot/index.html"
+            }
+        ]
+    },
+    "MindField": {
+        "description": "\"Mind Field\" is a documentary-style series by Michael Stevens (Vsauce) that explores psychology, neuroscience, and human behavior through experiments and real-world scenarios. Covering topics like isolation, consciousness, and AI, the show delves into how the brain works and how external factors shape our thoughts and actions.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Playlist",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Perception",
+                        "Mathematics and Statistics",
+                        "Psychology"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features",
+                "Partially outdated"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://youtube.com/playlist?list=PLZRRxQcaEjA4qyEuYfAMCazlL0vQDkIj2"
+            },
+            {
+                "name": "Youtube",
+                "payload": "https://youtube.com/playlist?list=PLZRRxQcaEjA7wmh3Z6EQuOK9fm1CqnJCI"
+            },
+            {
+                "name": "Youtube",
+                "payload": "https://youtube.com/playlist?list=PLZRRxQcaEjA7LX19uAySGlc9hmprBxfEP"
+            }
+        ]
+    },
+    "Numberphile": {
+        "description": "As the name suggests: Videos about numbers and mathematics. ",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@numberphile"
+            }
+        ]
+    },
+    "Primer": {
+        "description": "Cute colorfull blobs in beautiful simulations to explain complex topics. What more could you possibly want?",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": []
+                },
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!",
+            "Simulation(s)"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@PrimerBlobs"
+            }
+        ]
+    },
+    "Sebastian Lague": {
+        "description": "Sebastian Lague programmes wonderful demos for a wide variety of interesting topics. His videos are wonderful to watch, even if you are not interested in programming per se. ",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Demonstration"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Programming"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@SebastianLague"
+            }
+        ]
+    },
+    "Statistical Rethinking 2023": {
+        "description": "A very nice introduction to data analysis with a focus on causal models by Richard McElreath.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Playlist",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                },
+                {
+                    "topic": "Learning resources",
+                    "subtopics": [
+                        "Mathematics and Statistics"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Partially outdated"
+            ]
+        },
+        "tags": [
+            "Learning-By-Doing",
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus"
+            },
+            {
+                "name": "GitHub-Repository",
+                "payload": "https://github.com/rmcelreath/stat_rethinking_2024"
+            }
+        ]
+    },
+    "The Evolution Of Trust": {
+        "description": "Absolutely! Here's a friendly and content-focused summary of the \"Evolution of Trust\" interactive article:",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Website",
+                "subtype": "Demonstration"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": []
+                },
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Psychology"
+                    ]
+                }
+            ],
+            "flags": [
+                "Multi-Language"
+            ]
+        },
+        "tags": [
+            "Simulation(s)",
+            "Learning-By-Doing"
+        ],
+        "ressources": [
+            {
+                "name": "Website",
+                "payload": "https://ncase.me/trust/"
+            }
+        ]
+    },
+    "Veritasium": {
+        "description": "Veritasium is the element of truth. Learn about the world in deep, often physics related videos. Well worth a watch!",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": []
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@veritasium"
+            }
+        ]
+    },
+    "Vsauce": {
+        "description": "Hello Vsauce, Micheal here. If you don't know what that's about, go and have a look right now.",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Entertainment"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": []
+                },
+                {
+                    "topic": "Science Communication",
+                    "subtopics": [
+                        "Perception",
+                        "Mathematics and Statistics",
+                        "Psychology"
+                    ]
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features"
+            ]
+        },
+        "tags": [
+            "Old But Gold",
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@Vsauce"
+            }
+        ]
+    },
+    "Vsauce3": {
+        "description": "Exciting SciComm-related videos in the tradition of Vsauce. Very memable, very interesting (especially the older stuff). ",
+        "date": "2025-03-14T23:34:30.048Z",
+        "data": {
+            "types": {
+                "type": "Video-Creator",
+                "subtype": "Science Communication"
+            },
+            "topics": [
+                {
+                    "topic": "Science Communication",
+                    "subtopics": []
+                }
+            ],
+            "flags": [
+                "English",
+                "Accessibility Features",
+                "Partially outdated"
+            ]
+        },
+        "tags": [
+            "Old But Gold",
+            "Cool!"
+        ],
+        "ressources": [
+            {
+                "name": "Youtube",
+                "payload": "https://www.youtube.com/@Vsauce3"
+            }
+        ]
+    }
+}

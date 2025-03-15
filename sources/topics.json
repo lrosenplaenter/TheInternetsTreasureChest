@@ -1,5 +1,8 @@
 {
     "topics": [
-        {"maintopic": "TOPIC", "subtopics": ["subtopic1", "subtopic2"]}
+        {"maintopic": "Science Communication", "subtopics": ["Perception", "Mathematics and Statistics", "Psychology", "AI and Machine Learning", "Programming", "Neuroscience"]},
+        {"maintopic": "Learning resources", "subtopics": ["Programming", "Mathematics and Statistics"]},
+        {"maintopic": "Useful Tools", "subtopics": ["Data", "Cybersecurity", "Work and productivity"]},
+        {"maintopic": "Society and Politics", "subtopics": [""]}
     ]
 }

@@ -7,6 +7,7 @@
         {"name": "Wordpress", "publicname": "Blog", "symbol": "bi bi-wordpress", "color": "#21759b"},
         {"name": "Medium", "publicname": "Blog", "symbol": "bi bi-medium", "color": "#000000"},
         {"name": "Substack", "publicname": "Blog", "symbol": "bi bi-substack", "color": "#ff6719"},
+        {"name": "Wikipedia", "publicname": "Encyclopedia", "symbol": "bi bi-wikipedia", "color": "#000000"},
         {"name": "GitHub-Repository", "publicname": "Repository", "symbol": "bi bi-github", "color": "#1b1f23"},
         {"name": "DOI", "publicname": "DOI", "symbol": "bi bi-fingerprint", "color": "#fcb520"},
         {"name": "RSS Feed", "publicname": "RSS Feed", "symbol": "bi bi-rss", "color": "#f7a000"},
